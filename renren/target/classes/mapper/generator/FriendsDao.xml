@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.generator.dao.FriendsDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.generator.entity.FriendsEntity" id="friendsMap">
+        <result property="friId" column="fri_id"/>
+        <result property="friSender" column="fri_sender"/>
+        <result property="friReceiver" column="fri_receiver"/>
+        <result property="friState" column="fri_state"/>
+        <result property="friMsg" column="fri_msg"/>
+        <result property="friTime" column="fri_time"/>
+        <result property="friBz1" column="fri_bz1"/>
+        <result property="friBz2" column="fri_bz2"/>
+    </resultMap>
+
+
+</mapper>

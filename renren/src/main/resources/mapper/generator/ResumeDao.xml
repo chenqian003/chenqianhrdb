@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.generator.dao.ResumeDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.generator.entity.ResumeEntity" id="resumeMap">
+        <result property="resId" column="res_id"/>
+        <result property="resName" column="res_name"/>
+        <result property="resAge" column="res_age"/>
+        <result property="resGender" column="res_gender"/>
+        <result property="resMarriage" column="res_marriage"/>
+        <result property="resEducation" column="res_education"/>
+        <result property="resCollege" column="res_college"/>
+        <result property="resMajor" column="res_major"/>
+        <result property="resEnglish" column="res_english"/>
+        <result property="resInCollege" column="res_in_college"/>
+        <result property="resOutCollege" column="res_out_college"/>
+        <result property="resCity" column="res_city"/>
+        <result property="resWorkYear" column="res_work_year"/>
+        <result property="resBirthday" column="res_birthday"/>
+        <result property="resHometown" column="res_hometown"/>
+        <result property="resMobile" column="res_mobile"/>
+        <result property="resMail" column="res_mail"/>
+        <result property="resEvaluate" column="res_evaluate"/>
+        <result property="resExpectedArea" column="res_expected_area"/>
+        <result property="resExpectedWork" column="res_expected_work"/>
+        <result property="resExpectedOccupation" column="res_expected_occupation"/>
+        <result property="resExpectedSalary" column="res_expected_salary"/>
+        <result property="resCurrentAtate" column="res_current_atate"/>
+        <result property="resExpectedIndustry" column="res_expected_industry"/>
+        <result property="resWorkExperience" column="res_work_experience"/>
+        <result property="resProjectExperience" column="res_project_experience"/>
+        <result property="resProfessionalSkill" column="res_professional_skill"/>
+        <result property="resInterest" column="res_interest"/>
+        <result property="resTime" column="res_time"/>
+        <result property="resHrId" column="res_hr_id"/>
+        <result property="resFrom" column="res_from"/>
+        <result property="resBz1" column="res_bz1"/>
+        <result property="resBz2" column="res_bz2"/>
+    </resultMap>
+
+    <insert id="insertResume" parameterType="io.renren.modules.generator.entity.ResumeEntity" useGeneratedKeys="true" keyProperty="resId">
+        insert into resume (res_id,res_name,res_age,res_gender,res_marriage,res_education,res_college,res_major,res_english,res_in_college,res_out_college,res_city,res_work_year,res_birthday,res_hometown,res_mobile,res_mail,res_evaluate,res_expected_area,res_expected_work,res_expected_occupation,res_expected_salary,res_current_atate,res_expected_industry,res_work_experience,res_project_experience,res_professional_skill,res_interest,res_time,res_hr_id,res_from,res_bz1,res_bz2)
+        values(null ,#{resName},#{resAge},#{resGender},#{resMarriage},#{resEducation},#{resCollege},#{resMajor},#{resEnglish},#{resInCollege},#{resOutCollege},#{resCity},#{resWorkYear},#{resBirthday},#{resHometown},#{resMobile},#{resMail},#{resEvaluate},#{resExpectedArea},#{resExpectedWork},#{resExpectedOccupation},#{resExpectedSalary},#{resCurrentAtate},#{resExpectedIndustry},#{resWorkExperience},#{resProjectExperience},#{resProfessionalSkill},#{resInterest},#{resTime},#{resHrId},#{resFrom},#{resBz1},#{resBz2});
+    </insert>
+    <select id="getByresHrId" parameterType="long" resultType="io.renren.modules.generator.entity.ResumeEntity">
+        select * from resume where res_hr_id = #{id};
+    </select>
+</mapper>

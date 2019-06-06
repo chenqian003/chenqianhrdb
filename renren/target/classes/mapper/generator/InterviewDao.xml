@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.generator.dao.InterviewDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.generator.entity.InterviewEntity" id="interviewMap">
+        <result property="intwId" column="intw_id"/>
+        <result property="intwResumeId" column="intw_resume_id"/>
+        <result property="intwName" column="intw_name"/>
+        <result property="intwMobile" column="intw_mobile"/>
+        <result property="intwBookTime" column="intw_book_time"/>
+        <result property="intwHrId" column="intw_hr_id"/>
+        <result property="intwState" column="intw_state"/>
+        <result property="intwTime" column="intw_time"/>
+        <result property="intwBz1" column="intw_bz1"/>
+        <result property="intwBz2" column="intw_bz2"/>
+    </resultMap>
+
+
+</mapper>

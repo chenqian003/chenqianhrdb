@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.generator.dao.RecordDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.generator.entity.RecordEntity" id="recordMap">
+        <result property="recId" column="rec_id"/>
+        <result property="recRId" column="rec_r_id"/>
+        <result property="recHrId" column="rec_hr_id"/>
+        <result property="recCommunicate" column="rec_communicate"/>
+        <result property="recSkill" column="rec_skill"/>
+        <result property="recStudy" column="rec_study"/>
+        <result property="recEq" column="rec_eq"/>
+        <result property="recImpression" column="rec_impression"/>
+        <result property="recTime" column="rec_time"/>
+        <result property="recBz1" column="rec_bz1"/>
+        <result property="recBz2" column="rec_bz2"/>
+    </resultMap>
+
+
+</mapper>

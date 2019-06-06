@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.generator.dao.OccupationDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.generator.entity.OccupationEntity" id="occupationMap">
+        <result property="occId" column="occ_id"/>
+        <result property="occName" column="occ_name"/>
+        <result property="occCategoty" column="occ_categoty"/>
+        <result property="occCity" column="occ_city"/>
+        <result property="occTime" column="occ_time"/>
+        <result property="occHr" column="occ_hr"/>
+        <result property="occDescription" column="occ_description"/>
+        <result property="occState" column="occ_state"/>
+        <result property="occNature" column="occ_nature"/>
+        <result property="occSalaryRange" column="occ_salary_range"/>
+        <result property="occWorkAddress" column="occ_work_address"/>
+        <result property="occKeyworks" column="occ_keyworks"/>
+        <result property="occCompany" column="occ_company"/>
+        <result property="occCompanydesc" column="occ_companydesc"/>
+        <result property="occCount" column="occ_count"/>
+        <result property="occWorkYear" column="occ_work_year"/>
+        <result property="occEducation" column="occ_education"/>
+        <result property="occBz1" column="occ_bz1"/>
+        <result property="occBz2" column="occ_bz2"/>
+    </resultMap>
+
+
+</mapper>
