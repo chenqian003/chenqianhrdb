@@ -81,7 +81,7 @@
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.intwId)">修改</el-button>
           <el-button type="text" size="small" @click="deleteHandle(scope.row.intwId)">删除</el-button>
-          <el-button type="text" size="small" @click="recordHandle(scope.row.intwId)">面试</el-button>
+          <el-button type="text" size="small" @click="recordHandle(scope.row.intwResumeId)">面试</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -97,14 +97,16 @@
     <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
     <interview-add v-if="intwAddVisible" ref="intwAdd" @refreshDataList="getDataList"></interview-add>
-    <interview-record v-if="recordVisible" ref="recordAdd" @refreshDataList="getDataList"></interview-record>
+    <!--interview-record v-if="recordVisible" ref="recordAdd" @refreshDataList="getDataList"></interview-record-->
+    <info v-if="recordVisible" ref="recordAdd" @refreshDataList="getDataList"></info>
   </div>
 </template>
 
 <script>
   import AddOrUpdate from './interview-add-or-update'
   import InterviewAdd from './interview-add'
-  import InterviewRecord from './interview-record'
+//import InterviewRecord from './interview-record'
+  import Info from './info'
   export default {
     data () {
       return {
@@ -125,7 +127,8 @@
     components: {
       AddOrUpdate,
       InterviewAdd,
-      InterviewRecord
+    //InterviewRecord
+      Info
     },
     activated () {
       this.getDataList()
@@ -191,6 +194,7 @@
       },
       // 面试
       recordHandle (id){
+        console.log("sdasdasd="+id)
         this.recordVisible = true;
         this.$nextTick(()=>{
         this.$refs.recordAdd.init(id);

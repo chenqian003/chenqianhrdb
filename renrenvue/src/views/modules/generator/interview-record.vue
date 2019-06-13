@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    title="面试过程"
+    title="最新面试记录"
     :close-on-click-modal="false"
     :visible.sync="visible">
     <el-form :model="dataForm" :rules="dataRule" ref="dataForm" @keyup.enter.native="dataFormSubmit()" label-width="80px">

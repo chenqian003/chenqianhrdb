@@ -137,7 +137,7 @@ public class InterviewController extends AbstractController {
         InterviewEntity interviewEntity = interviewService.getById(recordEntity.getIntwId());
         // 修改状态为 已面试
         interviewEntity.setIntwState(Long.parseLong(Integer.toString(1)));
-        // 修改操作时间
+        // 修改
         interviewEntity.setIntwTime(new Date());
         interviewService.updateById(interviewEntity);
         recordEntity.setRecHrId(getUserId());

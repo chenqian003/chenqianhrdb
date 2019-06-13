@@ -62,8 +62,9 @@ public class ResumeController extends AbstractController {
      * 信息
      */
     @RequestMapping("/info/{resId}")
-    @RequiresPermissions("generator:resume:info")
+//    @RequiresPermissions("generator:resume:info")
     public R info(@PathVariable("resId") Long resId){
+        System.out.println("id="+resId);
 		ResumeEntity resume = resumeService.getById(resId);
 
         return R.ok().put("resume", resume);

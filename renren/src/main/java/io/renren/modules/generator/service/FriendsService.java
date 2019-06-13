@@ -14,7 +14,9 @@ import java.util.Map;
  * @date 2019-05-17 12:05:14
  */
 public interface FriendsService extends IService<FriendsEntity> {
-
-    PageUtils queryPage(Map<String, Object> params);
+    /**
+     * 传递登录ID只会显示有关的列表  徐夫立
+     */
+    PageUtils queryPage(Map<String, Object> params,Long fri_sender);
 }
 

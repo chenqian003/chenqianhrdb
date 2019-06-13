@@ -17,10 +17,13 @@ import io.renren.modules.generator.service.FriendsService;
 public class FriendsServiceImpl extends ServiceImpl<FriendsDao, FriendsEntity> implements FriendsService {
 
     @Override
-    public PageUtils queryPage(Map<String, Object> params) {
+    public PageUtils queryPage(Map<String, Object> params,Long id) {
         IPage<FriendsEntity> page = this.page(
                 new Query<FriendsEntity>().getPage(params),
-                new QueryWrapper<FriendsEntity>()
+                /**
+                 * 传递登录ID只会显示有关的列表  徐夫立
+                 */
+                new QueryWrapper<FriendsEntity>().or().eq("fri_receiver", id).or().eq("fri_sender", id)
         );
 
         return new PageUtils(page);

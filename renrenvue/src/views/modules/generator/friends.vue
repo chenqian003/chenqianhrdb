@@ -7,7 +7,10 @@
       <el-form-item>
         <el-button @click="getDataList()">查询</el-button>
         <el-button v-if="isAuth('generator:friends:save')" type="primary" @click="addOrUpdateHandle()">新增</el-button>
+        <el-button v-if="isAuth('generator:friends:save')" type="warning" @click="adjunctionHandle(friSender)">添加</el-button>
         <el-button v-if="isAuth('generator:friends:delete')" type="danger" @click="deleteHandle()" :disabled="dataListSelections.length <= 0">批量删除</el-button>
+        <el-button v-if="isAuth('generator:friends:save')" type="primary" @click="addoccupation()">发布职位</el-button>
+
       </el-form-item>
     </el-form>
     <el-table
@@ -79,6 +82,8 @@
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.friId)">修改</el-button>
           <el-button type="text" size="small" @click="deleteHandle(scope.row.friId)">删除</el-button>
+          <el-button type="text" size="small" @click="passHandle(scope.row.friId)">通过</el-button>
+          <el-button type="text" size="small" @click="refuseHandle(scope.row.friId)">拒绝</el-button>          
         </template>
       </el-table-column>
     </el-table>
@@ -93,11 +98,17 @@
     </el-pagination>
     <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
+    <circle-add v-if="circleVisible" ref="circleAdd" @refreshDataList="getDataList"></circle-add>
+
+
   </div>
 </template>
 
 <script>
   import AddOrUpdate from './friends-add-or-update'
+  import CircleAdd from './circle-add'
+
+
   export default {
     data () {
       return {
@@ -110,11 +121,14 @@
         totalPage: 0,
         dataListLoading: false,
         dataListSelections: [],
-        addOrUpdateVisible: false
+        addOrUpdateVisible: false,
+        circleVisible: false
+
       }
     },
     components: {
-      AddOrUpdate
+      AddOrUpdate,
+      CircleAdd
     },
     activated () {
       this.getDataList()
@@ -164,6 +178,13 @@
           this.$refs.addOrUpdate.init(id)
         })
       },
+      //徐夫立
+      adjunctionHandle(id){
+        this.circleVisible = true
+        this.$nextTick(() => {
+        this.$refs.circleAdd.init(id)
+        })
+      },
       // 删除
       deleteHandle (id) {
         var ids = id ? [id] : this.dataListSelections.map(item => {
@@ -193,7 +214,40 @@
             }
           })
         })
-      }
+      },
+      passHandle (id){
+        console.log(id);
+        this.$http({
+          url: this.$http.adornUrl('/generator/friends/pass'),
+          method: 'post',
+          params: this.$http.adornParams({
+            
+            'id':id
+            
+          })
+        })
+      },
+      refuseHandle (id){
+        console.log(id);
+        this.$http({
+          url: this.$http.adornUrl('/generator/friends/refuse'),
+          method: 'post',
+          params: this.$http.adornParams({
+            
+            'id':id
+            
+          })
+        })
+      },
+      ifendcase(val){
+        if(val.friState== '1'){
+           return "验证中"
+        }else if(val.friState=='2'){
+           return "验证通过"
+        }else{
+           return "申请拒绝"
+        }
+      }      
     }
   }
 </script>
