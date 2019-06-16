@@ -10,62 +10,115 @@
   <el-col :span="6"><div class="grid-content bg-purple-light">学历{{resEducation}}</div></el-col>
 </el-row>
 <el-row>
-  <el-col :span="6"><div class="grid-content bg-purple">毕业院校</div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple-light">所学专业</div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple">英语水平</div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple-light">入学时间</div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple">毕业院校{{resCollege}}</div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple-light">所学专业{{resMajor}}</div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple">英语水平{{resEnglish}}</div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple-light">入学时间{{resInCollege}}</div></el-col>
 </el-row>
 <el-row>
-  <el-col :span="6"><div class="grid-content bg-purple">毕业时间</div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple-light">居住城市</div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple">工作年限</div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple-light">出生年月</div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple">毕业时间{{resOutCollege}}</div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple-light">居住城市{{resCity}}</div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple">工作年限{{resWorkYear}}</div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple-light">出生年月{{resBirthday}}</div></el-col>
 </el-row>
 <el-row>
-  <el-col :span="6"><div class="grid-content bg-purple">户籍</div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple-light">手机号码</div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple">邮箱</div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple">户籍{{resHometown}}</div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple-light">手机号码{{resMobile}}</div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple">邮箱{{resMail}}</div></el-col>
 </el-row>
 <el-row >
-  <el-col :span="24"><div class="grid-content bg-purple-dark">自我评价</div></el-col>
+  <el-col :span="24"><div class="grid-content bg-purple-dark">自我评价{{resEvaluate}}</div></el-col>
 </el-row>
 <el-row>
-  <el-col :span="8"><div class="grid-content bg-purple">期望工作地区</div></el-col>
-  <el-col :span="8"><div class="grid-content bg-purple-light">期望工作性质</div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple">期望工作职业</div></el-col>
-  <el-col :span="20"><div class="grid-content bg-purple-light">期望月薪</div></el-col>
-  <el-col :span="20"><div class="grid-content bg-purple">目前状况</div></el-col>
-  <el-col :span="20"><div class="grid-content bg-purple-light">期望从事行业</div></el-col>
+  <el-col :span="8"><div class="grid-content bg-purple">期望工作地区{{resExpectedArea}}</div></el-col>
+  <el-col :span="8"><div class="grid-content bg-purple-light">期望工作性质{{resExpectedWork}}</div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple">期望工作职业{{resExpectedOccupation}}</div></el-col>
+  <el-col :span="20"><div class="grid-content bg-purple-light">期望月薪{{resExpectedSalary}}</div></el-col>
+  <el-col :span="20"><div class="grid-content bg-purple">目前状况{{resCurrentAtate}}</div></el-col>
+  <el-col :span="20"><div class="grid-content bg-purple-light">期望从事行业{{resExpectedIndustry}}</div></el-col>
 </el-row>
 <el-row>
-  <el-col :span="24"><div class="grid-content bg-purple">工作经历</div></el-col>
-  <el-col :span="24"><div class="grid-content bg-purple-light">项目经验</div></el-col>
+  <el-col :span="24"><div class="grid-content bg-purple">工作经历{{resWorkExperience}}</div></el-col>
+  <el-col :span="24"><div class="grid-content bg-purple-light">项目经验{{resProjectExperience}}</div></el-col>
 </el-row>
 <el-row>
-  <el-col :span="24"><div class="grid-content bg-purple">专业技能</div></el-col>
-  <el-col :span="24"><div class="grid-content bg-purple-light">兴趣爱好</div></el-col>
-  <el-col :span="10"><div class="grid-content bg-purple">录入时间</div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple-light">录入人</div></el-col>
+  <el-col :span="24"><div class="grid-content bg-purple">专业技能{{resProfessionalSkill}}</div></el-col>
+  <el-col :span="24"><div class="grid-content bg-purple-light">兴趣爱好{{resInterest}}</div></el-col>
+  <el-col :span="10"><div class="grid-content bg-purple">录入时间{{resTime}}</div></el-col>
+  <el-col :span="6"><div class="grid-content bg-purple-light">录入人{{resHrId}}</div></el-col>
 </el-row>
 <el-row>
-  <el-col :span="8"><div class="grid-content bg-purple">来源</div></el-col>
-  <el-col :span="8"><div class="grid-content bg-purple-light">备注1</div></el-col>
-  <el-col :span="8"><div class="grid-content bg-purple">备注2</div></el-col>
+  <el-col :span="8"><div class="grid-content bg-purple">来源{{resFrom}}</div></el-col>
+  <el-col :span="8"><div class="grid-content bg-purple-light">备注1{{resBz1}}</div></el-col>
+  <el-col :span="8"><div class="grid-content bg-purple">备注2{{resBz2}}</div></el-col>
 </el-row>
 <hr/><hr/>
 历史面试记录：
-<el-row>
-  <el-col :span="8">面试人<div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="8">沟通能力<div class="grid-content bg-purple-light"></div></el-col>
-  <el-col :span="8">技能水平<div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="8">学习能力<div class="grid-content bg-purple"></div></el-col>
-</el-row>
-<el-row>
-  <el-col :span="8">情商<div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="8">面试印象<div class="grid-content bg-purple-light"></div></el-col>
-  <el-col :span="8">学习能力<div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="8">面试时间<div class="grid-content bg-purple"></div></el-col>
-</el-row>
+<el-form :inline="true" :model="dataForm" @keyup.enter.native="getDataList(id)">
+</el-form>
+    <el-table
+      :data="dataList"
+      border
+      v-loading="dataListLoading"
+      @selection-change="selectionChangeHandle"
+      style="width: 100%;">
+      <el-table-column
+        type="selection"
+        header-align="center"
+        align="center"
+        width="50">
+      </el-table-column>
+      <el-table-column
+        prop="recId"
+        header-align="center"
+        align="center"
+        label="面试记录ID">
+      </el-table-column>
+      <el-table-column
+        prop="recRId"
+        header-align="center"
+        align="center"
+        label="简历ID">
+      </el-table-column>
+      <el-table-column
+        prop="recHrId"
+        header-align="center"
+        align="center"
+        label="HR_ID">
+      </el-table-column>
+      <el-table-column
+        prop="recCommunicate"
+        header-align="center"
+        align="center"
+        label="沟通能力">
+      </el-table-column>
+      <el-table-column
+        prop="recSkill"
+        header-align="center"
+        align="center"
+        label="技能水平">
+      </el-table-column>
+      <el-table-column
+        prop="recStudy"
+        header-align="center"
+        align="center"
+        label="学习能力">
+      </el-table-column>
+      <el-table-column
+        prop="recEq"
+        header-align="center"
+        align="center"
+        label="情商">
+      </el-table-column>
+      <el-table-column
+        prop="recImpression"
+        header-align="center"
+        align="center"
+        label="面试印象">
+      </el-table-column>
+
+    </el-table>
+
 
 <hr/><hr/>
 <!-- 新增面试记录：
@@ -131,15 +184,46 @@ export default {
     },
     data () {
       return {
+        dataForm: {          
+        },
         visible: false,
-          resId: 0,
-         
+          resId: 0,        
           resAge: '',
           resGender: '',
           resMarriage: '',
           resEducation: '',
-         
-      
+          resCollege: '',
+          resMajor: '',
+          resEnglish: '',
+          resInCollege: '',
+          resOutCollege: '',
+          resCity: '',
+          resWorkYear: '',
+          resBirthday: '',
+          resHometown: '',
+          resMobile: '',
+          resMail: '',
+          resEvaluate: '',
+          resExpectedArea: '',
+          resExpectedWork: '',
+          resExpectedOccupation: '',
+          resExpectedSalary: '',
+          resCurrentAtate: '',
+          resExpectedIndustry: '',
+          resWorkExperience: '',
+          resProjectExperience: '',
+          resProfessionalSkill: '',
+          resInterest: '',
+          resTime: '',
+          resHrId: '',
+          resFrom: '',
+          resBz1: '',
+          resBz2: '',
+
+          dataList: [],
+          dataListLoading: false,
+          dataListSelections: [],
+        
         // options1:[{
         //     value:'优秀',
         //     label:'优秀'
@@ -204,10 +288,15 @@ export default {
         
         }
     },
+
+    // activated () {
+    //     this.getDataLists(id)
+    // },
+ 
   methods:{
     init (id) {
     this.resId = id
-            console.log("2.sdasdasd="+id)
+    console.log("2.sdasdasd="+id)
 
     this.visible = true
         this.$nextTick(() => {             
@@ -221,10 +310,71 @@ export default {
                 this.resGender = data.resume.resGender
                 this.resMarriage = data.resume.resMarriage
                 this.resEducation = data.resume.resEducation
+                this.resCollege = data.resume.resCollege
+                this.resMajor = data.resume.resMajor
+                this.resEnglish = data.resume.resEnglish
+                this.resInCollege = data.resume.resInCollege
+                this.resOutCollege = data.resume.resOutCollege
+                this.resCity = data.resume.resCity
+                this.resWorkYear = data.resume.resWorkYear
+                this.resBirthday = data.resume.resBirthday
+                this.resHometown = data.resume.resHometown
+                this.resMobile = data.resume.resMobile
+                this.resMail = data.resume.resMail
+                this.resEvaluate = data.resume.resEvaluate
+                this.resExpectedArea = data.resume.resExpectedArea
+                this.resExpectedWork = data.resume.resExpectedWork
+                this.resExpectedOccupation = data.resume.resExpectedOccupation
+                this.resExpectedSalary = data.resume.resExpectedSalary
+                this.resCurrentAtate = data.resume.resCurrentAtate
+                this.resExpectedIndustry = data.resume.resExpectedIndustry
+                this.resWorkExperience = data.resume.resWorkExperience
+                this.resProjectExperience = data.resume.resProjectExperience
+                this.resProfessionalSkill = data.resume.resProfessionalSkill
+                this.resInterest = data.resume.resInterest
+                this.resTime = data.resume.resTime
+                this.resHrId = data.resume.resHrId
+                this.resFrom = data.resume.resFrom
+                this.resBz1 = data.resume.resBz1
+                this.resBz2 = data.resume.resBz2
+                
 
               }
             })
         })
+      },
+
+
+        getDataList (id) {
+        this.dataListLoading = true
+        this.resRId = id
+        console.log("面试简历ID="+this.resRId)
+        this.$http({
+          url: this.$http.adornUrl(`/generator/record/listRecord/${this.resRId}`),
+          method: 'get',
+          // params: this.$http.adornParams({
+          //   'page': this.pageIndex,
+          //   'limit': this.pageSize,
+          
+          // })
+        }).then(({data}) => {
+          if (data && data.code === 0) {
+            this.dataList = data.page
+          } else {
+            this.dataList = []           
+          }
+          this.dataListLoading = false
+        })
+      },
+
+      // 当前页
+      // currentChangeHandle (val) {
+      //   this.pageIndex = val
+      //   this.getDataLists()
+      // },
+      // 多选
+      selectionChangeHandle (val) {
+        this.dataListSelections = val
       },
       // //获取工作经验
       // getWorkExp(val){

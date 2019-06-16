@@ -30,8 +30,9 @@
     </el-input>
     
     
-    <el-button @click="add(textarea,telephone)" >添加</el-button> 
-    
+
+    <el-button @click="add(textarea,telephone,user_id,frisender)" >添加</el-button> 
+
     
     </el-dialog>
     
@@ -41,9 +42,13 @@
 export default {
     data (){
         return{
+
+            user_id:'',
             name:'xufuli',
             telephone:'15527892357',
             textarea:'',
+            
+
             frisender:'',
             visible: false,
             show:false,
@@ -53,6 +58,7 @@ export default {
            
         }
     },
+
     methods:{
         init (id) {
         this.frisender=id;
@@ -60,7 +66,8 @@ export default {
      },
         getInformation (val){
        // this.dataListLoading = true;
-        console.log(val);
+        console.log(val+"info");
+        
        
         this.$http({
           url: this.$http.adornUrl('/generator/friends/getInformation'),
@@ -73,7 +80,9 @@ export default {
         }).then(({data}) => {
           if (data && data.code === 0) {
             this.name = data.user.username,
-            this.telephone=data.user.mobile;
+            this.telephone=data.user.mobile,
+            this.user_id=data.user.userId;
+            console.log(user_id+"dengluid")
             // this.totalPage = data.page.totalCount
           } else {
             this.name = '',
@@ -81,13 +90,17 @@ export default {
 
             // this.totalPage = 0
           }
+          
         //  this.dataListLoading = false
         })
       },
        
-        add (f1,f2){
-        console.log(f1),
-        console.log(f2)
+        add (f1,f2,f3,f4){
+          
+       
+        console.log(f3+"-----uid--"),
+        console.log(f4),
+
         this.$http({
           url: this.$http.adornUrl('/generator/friends/add'),
           method: 'get',

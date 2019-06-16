@@ -198,6 +198,7 @@
         this.recordVisible = true;
         this.$nextTick(()=>{
         this.$refs.recordAdd.init(id);
+        this.$refs.recordAdd.getDataList(id);
         })
       },
       //新增预约

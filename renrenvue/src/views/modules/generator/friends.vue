@@ -7,10 +7,10 @@
       <el-form-item>
         <el-button @click="getDataList()">查询</el-button>
         <el-button v-if="isAuth('generator:friends:save')" type="primary" @click="addOrUpdateHandle()">新增</el-button>
+  
         <el-button v-if="isAuth('generator:friends:save')" type="warning" @click="adjunctionHandle(friSender)">添加</el-button>
+        
         <el-button v-if="isAuth('generator:friends:delete')" type="danger" @click="deleteHandle()" :disabled="dataListSelections.length <= 0">批量删除</el-button>
-        <el-button v-if="isAuth('generator:friends:save')" type="primary" @click="addoccupation()">发布职位</el-button>
-
       </el-form-item>
     </el-form>
     <el-table
@@ -47,7 +47,8 @@
         prop="friState"
         header-align="center"
         align="center"
-        label="关系状态">
+        label="关系状态"
+        :formatter="ifendcase">
       </el-table-column>
       <el-table-column
         prop="friMsg"
@@ -62,18 +63,6 @@
         label="操作时间">
       </el-table-column>
       <el-table-column
-        prop="friBz1"
-        header-align="center"
-        align="center"
-        label="备注1">
-      </el-table-column>
-      <el-table-column
-        prop="friBz2"
-        header-align="center"
-        align="center"
-        label="备注2">
-      </el-table-column>
-      <el-table-column
         fixed="right"
         header-align="center"
         align="center"
@@ -83,7 +72,7 @@
           <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.friId)">修改</el-button>
           <el-button type="text" size="small" @click="deleteHandle(scope.row.friId)">删除</el-button>
           <el-button type="text" size="small" @click="passHandle(scope.row.friId)">通过</el-button>
-          <el-button type="text" size="small" @click="refuseHandle(scope.row.friId)">拒绝</el-button>          
+          <el-button type="text" size="small" @click="refuseHandle(scope.row.friId)">拒绝</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -99,16 +88,12 @@
     <!-- 弹窗, 新增 / 修改 -->
     <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
     <circle-add v-if="circleVisible" ref="circleAdd" @refreshDataList="getDataList"></circle-add>
-
-
   </div>
 </template>
 
 <script>
   import AddOrUpdate from './friends-add-or-update'
   import CircleAdd from './circle-add'
-
-
   export default {
     data () {
       return {
@@ -123,7 +108,6 @@
         dataListSelections: [],
         addOrUpdateVisible: false,
         circleVisible: false
-
       }
     },
     components: {
@@ -178,11 +162,11 @@
           this.$refs.addOrUpdate.init(id)
         })
       },
-      //徐夫立
       adjunctionHandle(id){
+        console.log(id+"fasongzeid"),
         this.circleVisible = true
         this.$nextTick(() => {
-        this.$refs.circleAdd.init(id)
+          this.$refs.circleAdd.init(id)
         })
       },
       // 删除
@@ -247,7 +231,7 @@
         }else{
            return "申请拒绝"
         }
-      }      
+      }
     }
   }
 </script>
