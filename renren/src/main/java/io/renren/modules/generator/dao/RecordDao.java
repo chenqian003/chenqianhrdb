@@ -4,6 +4,8 @@ import io.renren.modules.generator.entity.RecordEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * InnoDB free: 9216 kB; (`rec_r_id`) REFER `hrdb/resume`(`res_id`) ON UPDATE NO AC
  * 
@@ -13,5 +15,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface RecordDao extends BaseMapper<RecordEntity> {
-	
+    List<RecordEntity> getByrecRId(int recRId);
+
 }

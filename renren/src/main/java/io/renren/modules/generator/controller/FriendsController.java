@@ -40,7 +40,7 @@ public class FriendsController {
     @Autowired
     private SysUserService sysUserService;
     /**
-     * 列表   徐夫立
+     * 列表
      */
     @RequestMapping("/list")
     @RequiresPermissions("generator:friends:list")

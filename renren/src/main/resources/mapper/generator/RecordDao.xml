@@ -17,6 +17,8 @@
         <result property="recBz1" column="rec_bz1"/>
         <result property="recBz2" column="rec_bz2"/>
     </resultMap>
-
+    <select id="getByrecRId" resultType="io.renren.modules.generator.entity.RecordEntity" parameterType="int">
+        select * from record where rec_r_id = #{recRId};
+    </select>
 
 </mapper>

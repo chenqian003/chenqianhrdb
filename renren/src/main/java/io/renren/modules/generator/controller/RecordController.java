@@ -1,8 +1,10 @@
 package io.renren.modules.generator.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import io.renren.modules.generator.entity.CategoryEntity;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,6 +57,19 @@ public class RecordController {
     }
 
     /**
+     * 面试预约信息
+     */
+    @RequestMapping("/listRecord/{recRId}")
+    @RequiresPermissions("generator:record:listRecord")
+    public R listRecord(@PathVariable("recRId") int recRId){
+        List<RecordEntity> page = recordService.getByrecRId(recRId);
+
+        return R.ok().put("page", page);
+    }
+
+
+
+    /**
      * 保存
      */
     @RequestMapping("/save")
@@ -86,5 +101,8 @@ public class RecordController {
 
         return R.ok();
     }
+
+
+
 
 }
