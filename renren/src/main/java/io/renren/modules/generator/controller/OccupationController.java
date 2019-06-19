@@ -1,6 +1,7 @@
 package io.renren.modules.generator.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -42,6 +43,14 @@ public class OccupationController {
         return R.ok().put("page", page);
     }
 
+    @RequestMapping("/list2")
+    //@RequiresPermissions("generator:occupation:list")
+    public R list2(@RequestParam Map<String, Object> params){
+        //PageUtils page = occupationService.queryPage(params);
+        List<OccupationEntity> list = occupationService.list();
+
+        return R.ok().put("list", list);
+    }
 
     /**
      * 信息
